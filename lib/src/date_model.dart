@@ -375,7 +375,15 @@ class DatePickerModel extends CommonPickerModel {
       return '';
     }
   }
-
+  
+  @override
+  List<int> layoutProportions() {
+    if (showDayColumn)
+      return [1, 1, 1];
+    else
+      return [1, 1, 0];
+  }
+  
   @override
   DateTime finalTime() {
     return currentTime;
