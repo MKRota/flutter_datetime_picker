@@ -313,8 +313,8 @@ class _DatePickerState extends State<_DatePickerComponent> {
                 child: Material(   
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15),
                     ),
                   ),
                   color: theme.backgroundColor,
@@ -488,8 +488,8 @@ class _DatePickerState extends State<_DatePickerComponent> {
       decoration: BoxDecoration(
         color: theme.headerColor ?? theme.backgroundColor,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+          topLeft: Radius.circular(15),
+          topRight: Radius.circular(15),
         ),
       ),
       child: Row(
