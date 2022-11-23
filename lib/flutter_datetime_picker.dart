@@ -311,7 +311,10 @@ class _DatePickerState extends State<_DatePickerComponent> {
               ),
               child: GestureDetector(
                 child: Material(
-                  color: theme.backgroundColor,
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(30.0),
+                  ),
+                  color: Colors.red,
                   child: _renderPickerView(theme),
                 ),
               ),
