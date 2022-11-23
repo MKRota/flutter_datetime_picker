@@ -400,14 +400,25 @@ class _DatePickerState extends State<_DatePickerComponent> {
 
   Widget _renderItemView(DatePickerTheme theme) {
     return Container(
-      color: theme.backgroundColor,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
+        ),
+        color: theme.backgroundColor,
+        border: Border(
+          left: BorderSide(
+            color: Colors.green,
+            width: 3,
+          ),
+        ),
+      ),
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Container(
-              color: Colors.red,
+            Container(              
               child: widget.pickerModel.layoutProportions()[0] > 0
                   ? _renderColumnView(
                       ValueKey(widget.pickerModel.currentLeftIndex()),
