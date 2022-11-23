@@ -23,6 +23,7 @@ class DatePicker {
   static Future<DateTime?> showDatePicker(
     BuildContext context, {
     bool showTitleActions: true,
+    bool showDayColumn: true,
     DateTime? minTime,
     DateTime? maxTime,
     DateChangedCallback? onChanged,
@@ -48,6 +49,7 @@ class DatePicker {
           maxTime: maxTime,
           minTime: minTime,
           locale: locale,
+          showDayColumn: showDayColumn,
         ),
       ),
     );
