@@ -330,13 +330,9 @@ class DatePickerModel extends CommonPickerModel {
 
   @override
   String? rightStringAtIndex(int index) {
-    if(showDayColumn){
       if (index >= 0 && index < rightList.length) {
       return rightList[index];
     } else {
-      return null;
-    }
-    }else{
       return null;
     }
   }
@@ -363,20 +359,15 @@ class DatePickerModel extends CommonPickerModel {
   }
 
   String _localeDay() {
-    if(showDayColumn)
-    {if (locale == LocaleType.zh || locale == LocaleType.jp) {
+    if (locale == LocaleType.zh || locale == LocaleType.jp) {
       return '日';
     } else if (locale == LocaleType.ko) {
       return '일';
     } else {
       return '';
     }
-    }else{
-      return '';
-    }
   }
   
-  @override
   List<int> layoutProportions() {
     if (showDayColumn)
       return [1, 1, 1];
