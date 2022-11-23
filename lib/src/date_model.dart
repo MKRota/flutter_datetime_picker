@@ -130,12 +130,14 @@ class CommonPickerModel extends BasePickerModel {
 class DatePickerModel extends CommonPickerModel {
   late DateTime maxTime;
   late DateTime minTime;
+  bool showDayColumn;
+
 
   DatePickerModel(
       {DateTime? currentTime,
       DateTime? maxTime,
       DateTime? minTime,
-      LocaleType? locale})
+      LocaleType? locale,this.showDayColumn:true})
       : super(locale: locale) {
     this.maxTime = maxTime ?? DateTime(2049, 12, 31);
     this.minTime = minTime ?? DateTime(1970, 1, 1);
@@ -328,9 +330,13 @@ class DatePickerModel extends CommonPickerModel {
 
   @override
   String? rightStringAtIndex(int index) {
-    if (index >= 0 && index < rightList.length) {
+    if(showDayColumn){
+      if (index >= 0 && index < rightList.length) {
       return rightList[index];
     } else {
+      return null;
+    }
+    }else{
       return null;
     }
   }
@@ -357,11 +363,15 @@ class DatePickerModel extends CommonPickerModel {
   }
 
   String _localeDay() {
-    if (locale == LocaleType.zh || locale == LocaleType.jp) {
+    if(showDayColumn)
+    {if (locale == LocaleType.zh || locale == LocaleType.jp) {
       return '日';
     } else if (locale == LocaleType.ko) {
       return '일';
     } else {
+      return '';
+    }
+    }else{
       return '';
     }
   }
